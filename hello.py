@@ -5,6 +5,7 @@ from flask import Flask
 app = Flask(__name__)
 
 HELLO_MESSAGE = "Hello, world!"
+GOODBYE_MESSAGE = "Goodbye, world!"
 
 
 @app.route("/")
@@ -13,6 +14,14 @@ def hello_world():
     Returns a dictionary with a message saying "Hello, world!".
     """
     return {"message": HELLO_MESSAGE}
+
+
+@app.route("/goodbye")
+def goodbye_world():
+    """
+    Returns a dictionary with a message saying "Goodbye, world!".
+    """
+    return {"message": GOODBYE_MESSAGE}
 
 
 if __name__ == "__main__":
