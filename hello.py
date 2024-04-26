@@ -6,6 +6,7 @@ app = Flask(__name__)
 
 HELLO_MESSAGE = "Hello, world!"
 GOODBYE_MESSAGE = "Goodbye, world!"
+HELLO_NAME_MESSAGE = "Hello, {}!"
 
 
 @app.route("/")
@@ -22,6 +23,14 @@ def goodbye_world():
     Returns a dictionary with a message saying "Goodbye, world!".
     """
     return {"message": GOODBYE_MESSAGE}
+
+
+@app.route("/hello/<name>")
+def hello_name(name):
+    """
+    Returns a dictionary with a message using the provided name.
+    """
+    return {"message": HELLO_NAME_MESSAGE.format(name)}
 
 
 if __name__ == "__main__":

@@ -6,6 +6,7 @@ from hello import app as flask_app
 
 HELLO_MESSAGE = "Hello, world!"
 GOODBYE_MESSAGE = "Goodbye, world!"
+HELLO_NAME_MESSAGE = "Hello, {}!"
 
 
 @pytest.fixture
@@ -29,4 +30,12 @@ def test_goodbye_world(client):
     """Should return a JSON response with a message saying 'Goodbye, world!'."""
     response = client.get('/goodbye')
     assert response.get_json() == {"message": GOODBYE_MESSAGE}
+    assert response.status_code == 200
+
+
+def test_hello_name(client):
+    """Should return a JSON response with a message using the provided name."""
+    name = "Caroline"
+    response = client.get(f'/hello/{name}')
+    assert response.get_json() == {"message": HELLO_NAME_MESSAGE.format(name)}
     assert response.status_code == 200
