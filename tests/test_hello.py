@@ -2,7 +2,7 @@
 
 import pytest
 
-from hello import app as flask_app
+from src.hello import app as flask_app
 
 HELLO_MESSAGE = "Hello, world!"
 GOODBYE_MESSAGE = "Goodbye, world!"
