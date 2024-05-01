@@ -42,8 +42,9 @@ def weather():
     """
     return {"message": WEATHER_MESSAGE}
 
+
 @app.route("/nice-day")
-def weather():
+def nice_day():
     """
     Returns a dictionary with a message saying "Nice day, ain't it?".
     """
