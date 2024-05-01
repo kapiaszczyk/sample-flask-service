@@ -10,4 +10,4 @@ COPY . .
 
 EXPOSE 5000
 
-CMD ["python", "hello.py"]
+CMD ["python", "src/hello.py"]
