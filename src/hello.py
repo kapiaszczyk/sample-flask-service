@@ -62,7 +62,7 @@ def cats():
 
 
 @app.route("/dogs")
-def cats():
+def dogs():
     """
     Returns a dictionary with a message saying "Dogs are pretty neat.".
     """
