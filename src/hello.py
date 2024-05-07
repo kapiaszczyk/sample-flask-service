@@ -9,6 +9,7 @@ GOODBYE_MESSAGE = "Goodbye, world!"
 HELLO_NAME_MESSAGE = "Hello, {}!"
 WEATHER_MESSAGE = "Nice weather, ain't it?"
 DAY_MESSAGE = "Nice day, ain't it?"
+CATS_MESSAGE = "Meow?"
 
 
 @app.route("/")
@@ -49,6 +50,14 @@ def nice_day():
     Returns a dictionary with a message saying "Nice day, ain't it?".
     """
     return {"message": DAY_MESSAGE}
+
+@app.route("/cats")
+def cats():
+    """
+    Returns a dictionary with a message saying "Meow?".
+    """
+    return {"message": CATS_MESSAGE}
+
 
 
 if __name__ == "__main__":
