@@ -10,6 +10,7 @@ HELLO_NAME_MESSAGE = "Hello, {}!"
 WEATHER_MESSAGE = "Nice weather, ain't it?"
 DAY_MESSAGE = "Nice day, ain't it?"
 CATS_MESSAGE = "Meow?"
+DOGS_MESSAGE = "Nope."
 
 
 @app.route("/")
@@ -58,7 +59,12 @@ def cats():
     """
     return {"message": CATS_MESSAGE}
 
-
+@app.route("/dogs")
+def dogs():
+    """
+    Returns a dictionary with a message saying "Nope.".
+    """
+    return {"message": DOGS_MESSAGE}
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)
